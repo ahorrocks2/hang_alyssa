@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+word_list = [
+  [ "No man is an island"],
+  [ "Revenge is best served cold"],
+  [ "All dogs go to heaven"],
+  [ "Fortune favors the bold"],
+  [ "When the going gets tough the tough get going"],
+  [ "Birds of a feather flock together"]
+]
+
+word_list.each do |text|
+  Word.create( text: text )
+end
