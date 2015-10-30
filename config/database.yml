@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: pg_alyssa
+  password: alyssa
+
+development:
+  <<: *default
+  database: rails_project_development
+test:
+  <<: *default
+  database: rails_project_test
+production:
+  <<: *default
+  database: rails_project_production
+  username: rails_project
+  password: <%= ENV['RAILS_PROJECT_DATABASE_PASSWORD'] %>
