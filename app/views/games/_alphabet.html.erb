@@ -1,1 +1,10 @@
-<h1>Alphabet here</h1>
+<div id="alphabet">
+  <% ('A'..'Z').to_a.each do |letter| %>
+    <% if letter == 'Q' %>
+      <br>
+      <span class="letter"><%= link_to "#{letter}", game_path(@game), class: 'btn btn-lg btn-warning' %></span>
+    <% else %>
+      <span class="letter"><%= link_to "#{letter}", game_path(@game), class: 'btn btn-lg btn-warning' %></span>
+    <% end %>
+  <% end %>
+</div>

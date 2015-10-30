@@ -18,4 +18,5 @@ module ApplicationHelper
 
     return phrase_array.join(" ")
   end
+  
 end
