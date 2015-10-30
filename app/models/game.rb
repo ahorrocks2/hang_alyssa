@@ -1,4 +1,3 @@
 class Game < ActiveRecord::Base
-  has_one :round
-
+  has_many :rounds
 end
