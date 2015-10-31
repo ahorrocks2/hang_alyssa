@@ -2,9 +2,9 @@
   <% ('A'..'Z').to_a.each do |letter| %>
     <% if letter == 'Q' %>
       <br>
-      <span class="letter"><%= link_to "#{letter}", game_path(@game), class: 'btn btn-lg btn-warning' %></span>
+      <%= link_to "#{letter}", new_game_guess_path(@game.id, :letter => "#{letter}"), id: "letter_#{letter}", class: 'btn btn-lg btn-warning', remote: true, :method => 'post' %>
     <% else %>
-      <span class="letter"><%= link_to "#{letter}", game_path(@game), class: 'btn btn-lg btn-warning' %></span>
+      <%= link_to "#{letter}", new_game_guess_path(@game.id, :letter => "#{letter}"), id: "letter_#{letter}", class: 'btn btn-lg btn-warning', remote: true, :method => 'post' %>
     <% end %>
   <% end %>
 </div>

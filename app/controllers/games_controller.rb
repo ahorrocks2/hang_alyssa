@@ -1,6 +1,10 @@
 class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
