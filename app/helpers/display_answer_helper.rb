@@ -15,12 +15,11 @@ module DisplayAnswerHelper
           answer_array.push(letter)
         else
           answer_array.push('[_]')
-          2.times do
-            answer_array.push(' ')
-          end
         end
       else
-        answer_array.push(' ')
+        3.times do
+          answer_array.push(' ')
+        end
       end
     end
 
