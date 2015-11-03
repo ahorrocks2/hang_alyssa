@@ -1,12 +1,11 @@
 class Guess < ActiveRecord::Base
   belongs_to :game
   validates_presence_of :letter
-  after_save :check_guess
 
   def check_guess
-    self.game.answer.each do |answer_letter|
+    self.game.split_answer_to_letters.each do |answer_letter|
       if answer_letter == self.letter
-        self.in_answer? :true
+        self.update(:in_answer? => true)
       end
     end
   end

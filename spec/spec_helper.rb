@@ -1,6 +1,5 @@
-
 require 'simplecov'
-require 'capybara/poltergeist'
+require 'capybara'
 
 Capybara.javascript_driver = :poltergeist
 

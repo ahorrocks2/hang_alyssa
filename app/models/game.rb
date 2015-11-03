@@ -13,7 +13,7 @@ class Game < ActiveRecord::Base
       end
       letters_array.push(" ")
     end
-    binding.pry
+
     return letters_array
   end
 end

@@ -5,7 +5,7 @@ module DisplayAnswerHelper
 
     game.guesses.each do |guess|
       if guess.in_answer?
-        correct_guesses_array.push(guess)
+        correct_guesses_array.push(guess.letter)
       end
     end
 
@@ -15,6 +15,9 @@ module DisplayAnswerHelper
           answer_array.push(letter)
         else
           answer_array.push('[_]')
+          2.times do
+            answer_array.push(' ')
+          end
         end
       else
         answer_array.push(' ')
