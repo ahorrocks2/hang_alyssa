@@ -15,5 +15,5 @@ word_list = [
 ]
 
 word_list.each do |text|
-  Round.create( text: text )
+  Answer.create( text: text )
 end

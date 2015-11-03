@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/am-rocks/Desktop/rails_project/spec/models/game_spec.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/spec/models/game_spec.rb": [
         1,
         null,
         1,
         2,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/spec/rails_helper.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/spec/rails_helper.rb": [
         1,
         1,
         null,
@@ -29,8 +29,8 @@
         null,
         null,
         1,
-        5,
-        5,
+        3,
+        3,
         null,
         null,
         1,
@@ -43,14 +43,14 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/environment.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/am-rocks/Desktop/rails_project/config/application.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/application.rb": [
         1,
         null,
         1,
@@ -87,12 +87,12 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/boot.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/home/am-rocks/Desktop/rails_project/config/environments/test.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/environments/test.rb": [
         1,
         null,
         null,
@@ -136,7 +136,7 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/assets.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -149,7 +149,7 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/backtrace_silencers.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -158,18 +158,18 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/cookies_serializer.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/filter_parameter_logging.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/inflections.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -187,18 +187,18 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/mime_types.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/session_store.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/am-rocks/Desktop/rails_project/config/initializers/wrap_parameters.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -214,7 +214,7 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/config/routes.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/config/routes.rb": [
         1,
         1,
         null,
@@ -228,21 +228,37 @@
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/app/helpers/application_helper.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/app/helpers/application_helper.rb": [
         1,
-        null
-      ],
-      "/home/am-rocks/Desktop/rails_project/app/models/game.rb": [
-        1,
-        1,
-        1,
-        null,
         1,
         0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
         null,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/spec/models/guess_spec.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/app/models/game.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/hang_alyssa/spec/models/guess_spec.rb": [
         1,
         null,
         1,
@@ -250,28 +266,13 @@
         2,
         null
       ],
-      "/home/am-rocks/Desktop/rails_project/app/models/guess.rb": [
+      "/Users/Guest/Desktop/hang_alyssa/app/models/guess.rb": [
         1,
         1,
         1,
-        null
-      ],
-      "/home/am-rocks/Desktop/rails_project/spec/models/round_spec.rb": [
-        1,
-        null,
-        1,
-        2,
-        2,
-        null
-      ],
-      "/home/am-rocks/Desktop/rails_project/app/models/round.rb": [
-        1,
-        1,
-        1,
-        null,
         null
       ]
     },
-    "timestamp": 1446240590
+    "timestamp": 1446571324
   }
 }

@@ -9,9 +9,9 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new
+    num = rand(1..6)
+    @game.text = Answer.find(num).text
     if @game.save
-      num = rand(18..25)
-      @game.rounds << Round.find(num)
       redirect_to game_path(@game)
     else
       render :new
