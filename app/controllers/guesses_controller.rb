@@ -9,5 +9,4 @@ class GuessesController < ApplicationController
       end
     end
   end
-
 end

@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  helper :hide_letters
+  helper :display_answer
 
   def show
     @game = Game.find(params[:id])
@@ -8,7 +8,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new
     num = rand(1..6)
-    @game.text = Answer.find(num).text
+    @game.answer = Answer.find(num).text
     if @game.save
       redirect_to game_path(@game)
     else

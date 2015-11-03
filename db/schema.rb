@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103172747) do
+ActiveRecord::Schema.define(version: 20151103195321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151103172747) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "score"
-    t.string   "text"
+    t.string   "answer"
   end
 
   create_table "guesses", force: :cascade do |t|
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151103172747) do
     t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "in_answer?", default: false
   end
 
 end
