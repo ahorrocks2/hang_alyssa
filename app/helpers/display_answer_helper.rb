@@ -11,12 +11,14 @@ module DisplayAnswerHelper
       end
 
       game.split_answer_to_letters.each do |letter|
-        if letter != ' '
+        if letter != ' ' && letter != '-'
           if correct_guesses_array.include?(letter)
             answer_array.push(letter)
           else
             answer_array.push('[_]')
           end
+        elsif letter == '-'
+          answer_array.push('-')
         else
           3.times do
             answer_array.push(' ')

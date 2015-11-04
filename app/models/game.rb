@@ -1,5 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :guesses
+  before_save :generate_answer
+
 
   def split_answer_to_letters
     letters_array = []
@@ -17,12 +19,6 @@ class Game < ActiveRecord::Base
     return letters_array
   end
 
-  def assign_answer
-    num = rand(1..6)
-    self.answer = Answer.find(num).text
-    self.save
-  end
-
   def dead?
     wrong_answers = 0
 
@@ -37,6 +33,21 @@ class Game < ActiveRecord::Base
     else
       return true
     end
+  end
+
+private
+
+  def generate_answer
+    random_num = rand(1..50000)
+    answer = RestClient::Request.new(
+      :method => :get,
+      :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{random_num}&limit=1"
+    ).execute
+
+    parsed_answer = JSON.parse(answer)
+    final_answer = parsed_answer['results'].first['headword']
+    Answer.create(text: final_answer)
+    self.answer = Answer.last.text
   end
 
 end

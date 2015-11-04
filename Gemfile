@@ -13,6 +13,7 @@ gem "letter_opener"
 gem 'chartkick'
 gem 'devise'
 gem 'will_paginate'
+gem 'rest-client'
 
 group :development do
   gem 'byebug'
