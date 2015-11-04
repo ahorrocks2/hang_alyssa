@@ -16,4 +16,5 @@ class Game < ActiveRecord::Base
 
     return letters_array
   end
+
 end

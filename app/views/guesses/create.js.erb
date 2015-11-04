@@ -1,2 +1,2 @@
 $("#letter_<%= @guess.letter %>").hide();
-$("#hidden_letters").html('<%= j render "games/round", game: @game %>')
+$("#letter_display").html('<%= j render "games/round", game: @game %>');
