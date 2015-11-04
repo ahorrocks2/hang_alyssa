@@ -1,2 +1,3 @@
 $("#alphabet").hide();
 $("#dead").append('You died.');
+$("#letter_display").html('<%= j render "games/round", game: @game %>');
