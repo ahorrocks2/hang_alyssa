@@ -36,7 +36,7 @@ class Game < ActiveRecord::Base
   end
 
 private
-  def find_new_answer
+  def find_new_answer(game)
     random_num = rand(1..50000)
     answer = RestClient::Request.new(
     :method => :get,
@@ -44,7 +44,9 @@ private
     ).execute
 
     parsed_answer = JSON.parse(answer)
-    return final_answer = parsed_answer['results'].first['headword']
+    final_answer = parsed_answer['results'].first['headword']
+    Answer.create(text: final_answer)
+    self.answer = Answer.last.text
   end
 
   def generate_answer
@@ -58,11 +60,11 @@ private
     final_answer = parsed_answer['results'].first['headword']
 
     if final_answer.split("").include?(",") || final_answer.split("").include?(" ")
-      self.find_new_answer
+      self.find_new_answer(self)
+    else
+      Answer.create(text: final_answer)
+      self.answer = Answer.last.text
     end
-
-    Answer.create(text: final_answer)
-    self.answer = Answer.last.text
   end
 
 end

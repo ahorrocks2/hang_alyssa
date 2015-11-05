@@ -17,6 +17,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.tile {
+  height: 100px;
+  width: 100px;
+}
+
 #alphabet, #letter_display {
   text-align: center;
+}
+
+#homescreen {
+  text-align: center;
+  width: 500px;
+  position: center;
 }
