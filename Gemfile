@@ -15,6 +15,7 @@ gem 'devise'
 gem 'will_paginate'
 gem 'rest-client'
 gem 'faker'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'byebug'

@@ -1,6 +1,4 @@
 class GamesController < ApplicationController
-  helper :display_answer
-
   def show
     @game = Game.find(params[:id])
   end

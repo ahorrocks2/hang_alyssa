@@ -35,9 +35,56 @@ class Game < ActiveRecord::Base
     end
   end
 
+
+  def display_answer
+    if self.dead? == false
+      answer_array = []
+      correct_guesses_array = []
+
+
+      self.guesses.each do |guess|
+        if guess.in_answer?
+          correct_guesses_array.push(guess.letter)
+        end
+      end
+
+      self.split_answer_to_letters.each do |letter|
+        if letter != ' ' && letter != '-'
+          if correct_guesses_array.include?(letter)
+            answer_array.push(letter)
+          else
+            answer_array.push("[_]")
+          end
+        elsif letter == '-'
+          answer_array.push('-')
+        elsif letter == ' '
+          answer_array.push(' ')
+        else
+          3.times do
+            answer_array.push(' ')
+          end
+        end
+      end
+
+      return answer_array
+    else
+      return self.answer
+    end
+  end
+
+  def won?
+    display = self.display_answer
+    if (self.dead? == false) && (display == self.answer || display.exclude?('[_]'))
+      binding.pry()
+      return true
+    else
+      return false
+    end
+  end
+
 private
   def generate_answer
-    #if the user chooses 'street smart' it generates a city name
+    #if the user chooses 'street smart' it generates a country name
     if self.style == 'street'
       answer_text = Faker::Address.country
       Answer.create(text: answer_text)

@@ -1,6 +1,14 @@
 <h1 id= 'letter_display'>
-  <% if @game.dead? == false %>
-    <% display_answer(game).each do |piece| %>
+  <% if @game.won? == true %>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          YOU WON!
+        </div>
+      </div>
+    </div>
+  <% elsif @game.dead? == false %>
+    <% @game.display_answer.each do |piece| %>
       <% if piece == "[_]" %>
         <img class='tile' src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=75736351'>
       <% else %>
