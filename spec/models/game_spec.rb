@@ -16,6 +16,7 @@ describe Game do
     guess4 = test_game.guesses.new(:letter => 'H')
     guess5 = test_game.guesses.new(:letter => 'I')
     guess6 = test_game.guesses.new(:letter => 'J')
-    expect(test_game.dead?).to(eql(true))
+    expect(test_game.dead?).to(be(true))
   end
+
 end

@@ -30,12 +30,22 @@ class Game < ActiveRecord::Base
 
     if wrong_answers < 6
       return false
-    else
+    elsif wrong_answers > 5 && (self.guesses.last.in_answer? == false)
       return true
     end
   end
 
 private
+  def find_new_answer
+    random_num = rand(1..50000)
+    answer = RestClient::Request.new(
+    :method => :get,
+    :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{random_num}&limit=1"
+    ).execute
+
+    parsed_answer = JSON.parse(answer)
+    return final_answer = parsed_answer['results'].first['headword']
+  end
 
   def generate_answer
     random_num = rand(1..50000)
@@ -46,6 +56,11 @@ private
 
     parsed_answer = JSON.parse(answer)
     final_answer = parsed_answer['results'].first['headword']
+
+    if final_answer.split("").include?(",") || final_answer.split("").include?(" ")
+      self.find_new_answer
+    end
+
     Answer.create(text: final_answer)
     self.answer = Answer.last.text
   end
