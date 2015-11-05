@@ -14,6 +14,7 @@ gem 'chartkick'
 gem 'devise'
 gem 'will_paginate'
 gem 'rest-client'
+gem 'faker'
 
 group :development do
   gem 'byebug'

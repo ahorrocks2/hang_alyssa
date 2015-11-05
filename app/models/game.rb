@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :guesses
   before_save :generate_answer
-
+  attr_accessor :style
 
   def split_answer_to_letters
     letters_array = []
@@ -36,34 +36,40 @@ class Game < ActiveRecord::Base
   end
 
 private
-  def find_new_answer(game)
-    random_num = rand(1..50000)
-    answer = RestClient::Request.new(
-    :method => :get,
-    :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{random_num}&limit=1"
-    ).execute
-
-    parsed_answer = JSON.parse(answer)
-    final_answer = parsed_answer['results'].first['headword']
-    Answer.create(text: final_answer)
-    self.answer = Answer.last.text
-  end
-
   def generate_answer
-    random_num = rand(1..50000)
-    answer = RestClient::Request.new(
-      :method => :get,
-      :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{random_num}&limit=1"
-    ).execute
-
-    parsed_answer = JSON.parse(answer)
-    final_answer = parsed_answer['results'].first['headword']
-
-    if final_answer.split("").include?(",") || final_answer.split("").include?(" ")
-      self.find_new_answer(self)
-    else
-      Answer.create(text: final_answer)
+    #if the user chooses 'street smart' it generates a city name
+    if self.style == 'street'
+      answer_text = Faker::Address.country
+      Answer.create(text: answer_text)
       self.answer = Answer.last.text
+
+    else
+    #if the user chooses 'book smart' it generates a diction word
+      random_num = rand(1..50000)
+      answer = RestClient::Request.new(
+        :method => :get,
+        :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{random_num}&limit=1"
+      ).execute
+
+      parsed_answer = JSON.parse(answer)
+      final_answer = parsed_answer['results'].first['headword']
+
+    #if the word generated has a space or a comma, re-query
+      if (final_answer.split("").include?(",")) || (final_answer.split("").include?(' '))
+        new_random_num = rand(1..50000)
+        new_answer = RestClient::Request.new(
+        :method => :get,
+        :url => "https://api.pearson.com:443/v2/dictionaries/ldoce5/entries?offset=#{new_random_num}&limit=1"
+        ).execute
+
+        new_parsed_answer = JSON.parse(answer)
+        new_final_answer = new_parsed_answer['results'].first['headword']
+        Answer.create(text: new_final_answer)
+        self.answer = Answer.last.text
+      else
+        Answer.create(text: final_answer)
+        self.answer = Answer.last.text
+      end
     end
   end
 

@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new
+    @game = Game.new(style: params[:style])
 
     if @game.save
       redirect_to game_path(@game)

@@ -1,9 +1,13 @@
 <h1 id= 'letter_display'>
-  <% display_answer(game).each do |piece| %>
-    <% if piece == "[_]" %>
-      <img class='tile' src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=75736351'>
-    <% else %>
-      <%= piece %>
+  <% if @game.dead? == false %>
+    <% display_answer(game).each do |piece| %>
+      <% if piece == "[_]" %>
+        <img class='tile' src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=75736351'>
+      <% else %>
+        <%= piece %>
+      <% end %>
     <% end %>
+  <% else %>
+    <%= @game.answer %>
   <% end %>
 </h1>

@@ -1,6 +1,6 @@
 <div id="homescreen">
   <h1>HANG YOURSELF</h1>
 
-  <%= link_to "BOOKSMART", games_path, class: 'btn btn-info', id: 'start_game', :action => 'create', :method => 'post' %>
-  <%= link_to "STREETSMART", root_path, class: 'btn btn-danger' %>
+  <%= link_to "BOOKSMART", games_path, class: 'btn btn-info', id: 'start_booksmart', :action => 'create', :method => 'post' %>
+  <%= link_to "STREETSMART", games_path(:style => 'street'), class: 'btn btn-danger', id: 'start_streetsmart', :action => 'create', :method => 'post' %>
 </div>
