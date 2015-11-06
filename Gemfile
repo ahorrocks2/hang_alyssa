@@ -17,6 +17,7 @@ gem 'rest-client'
 gem 'faker'
 gem 'jquery-turbolinks'
 gem 'random-word-generator', '~> 0.0.1'
+gem "paperclip", "~> 4.3"
 
 group :development do
   gem 'byebug'
