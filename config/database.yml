@@ -3,9 +3,9 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  # host: localhost
-  # username: pg_alyssa
-  # password: alyssa
+  host: localhost
+  username: pg_alyssa
+  password: alyssa
 
 development:
   <<: *default
