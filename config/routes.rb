@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     resources :guesses, :except => [:edit, :destroy, :update]
   end
 
+  resources :players, :only => [:index]
+
 end

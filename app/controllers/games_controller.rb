@@ -4,8 +4,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(style: params[:style])
-
+    @game = Game.new(style: params[:commit])
     if @game.save
       redirect_to game_path(@game)
     else

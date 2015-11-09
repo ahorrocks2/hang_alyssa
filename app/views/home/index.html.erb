@@ -1,12 +1,17 @@
 <div id="homescreen">
-  <h1>HANG YOURSELF</h1>
+  <h1>HANG SOMEONE?</h1>
 
-  <%= form_for @game, url: {action: "create"}, html: { multipart: true } do |f| %>
-    <%= f.file_field :avatar %>
-    <%= f.submit "BOOKSMART", name: 'book', class: 'btn btn-info'%>
-    <%= f.submit "STREETSMART", name: 'street', class: 'btn btn-danger'%>
-  <% end %>
+  <div class="players">
+
+    <%= form_tag games_path do %>
+      <% @players.each do |p| %>
+        <img src="<%= p.url %>" class="player_image">
+        <%= radio_button_tag 'player', "#{p.name}" %>
+      <% end %>
+      <%= submit_tag 'BOOKSMART', class: 'btn btn-info' %>
+      <%= submit_tag 'STREETSMART', class: 'btn btn-danger' %>
+
+    <% end %>
+  </div>
+
 </div>
-<!--
-  <%= link_to "BOOKSMART", games_path, class: 'btn btn-info', id: 'start_booksmart', :action => 'create', :method => 'post' %>
-  <%= link_to "STREETSMART", games_path(:style => 'street'), class: 'btn btn-danger', id: 'start_streetsmart', :action => 'create', :method => 'post' %> -->
