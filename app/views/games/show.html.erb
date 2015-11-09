@@ -1,11 +1,12 @@
 <h1 style="text-align: center;">Don't Hang Yourself.</h1>
 
+<%= render 'gallows', player: @player %>
 <%= render 'round', game: @game %>
 
 <% if @game.dead? == false && @game.won? %>
-<hr>
-  <h1 style="text-align: center;">YOU WON!</h1>
-<hr>
+  <hr>
+    <h1 style="text-align: center;">YOU WON!</h1>
+  <hr>
 <% end %>
 
 <hr>
