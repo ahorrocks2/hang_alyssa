@@ -1,5 +1,5 @@
 <div id="homescreen">
-  <h1>HANG SOMEONE?</h1>
+  <h1>Let's Hang?</h1>
 
   <div class="players">
 
@@ -8,7 +8,9 @@
         <img src="<%= p.url %>" class="player_image">
         <%= radio_button_tag 'player', "#{p.name}" %>
       <% end %>
-      <%= submit_tag 'BOOKSMART', class: 'btn btn-info' %>
+      <p>I'm feeling...</p>
+
+      <%= submit_tag 'BOOKSMART', class: 'btn btn-info has-popover', type: 'button', data: { toggle: "popover", content: "PLEASE WORK", trigger: 'hover', placement: 'left'} %>
       <%= submit_tag 'STREETSMART', class: 'btn btn-danger' %>
     <% end %>
   </div>

@@ -61,7 +61,7 @@ class Game < ActiveRecord::Base
         elsif letter == '-'
           answer_array.push('-')
         elsif letter == ' '
-          answer_array.push(' ')
+          answer_array.push('  ')
         else
           3.times do
             answer_array.push(' ')
