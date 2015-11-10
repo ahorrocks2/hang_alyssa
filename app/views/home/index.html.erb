@@ -10,8 +10,8 @@
       <% end %>
       <p>I'm feeling...</p>
 
-      <%= submit_tag 'BOOKSMART', class: 'btn btn-info has-popover', type: 'button', data: { toggle: "popover", content: "PLEASE WORK", trigger: 'hover', placement: 'left'} %>
-      <%= submit_tag 'STREETSMART', class: 'btn btn-danger' %>
+      <%= submit_tag 'BOOKSMART', class: 'btn btn-info', type: 'button', data: { toggle: "tooltip", placement: 'left'}, title: "Random Dictionary Word" %>
+      <%= submit_tag 'STREETSMART', class: 'btn btn-danger', type: 'button', data: { toggle: "tooltip", placement: 'right'}, title: "Random Country Word" %>
     <% end %>
   </div>
 
