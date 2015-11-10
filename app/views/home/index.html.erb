@@ -1,17 +1,36 @@
 <div id="homescreen">
-  <h1>Let's Hang?</h1>
+  <h1>LET'S HANG, MAN</h1>
+  <p>
+    Select a player as collateral damage:
+  </p>
 
   <div class="players">
 
     <%= form_tag games_path do %>
-      <% @players.each do |p| %>
-        <img src="<%= p.url %>" class="player_image">
-        <%= radio_button_tag 'player', "#{p.name}" %>
-      <% end %>
-      <p>I'm feeling...</p>
 
-      <%= submit_tag 'BOOKSMART', class: 'btn btn-info', data: { toggle: "tooltip", placement: 'left'}, title: "Random Dictionary Word" %>
-      <%= submit_tag 'STREETSMART', class: 'btn btn-danger', data: { toggle: "tooltip", placement: 'right'}, title: "Random Country Word" %>
+      <% @players.each do |p| %>
+        <div class="player_options">
+          <img src="<%= p.url %>" class="player_image"><br>
+          <%= radio_button_tag 'player', "#{p.name}" %>
+        </div>
+      <% end %>
+
+      <hr>
+
+      <h3>I'm feeling...</h3>
+
+      <div>
+        <%= button_tag(type: 'submit', class: 'btn btn-default', data: { toggle: "tooltip", placement: 'left'}, title: "Random Dictionary Word") do %>
+          <i class="fa fa-book fa-3x"> BOOKSMART</i>
+        <% end %>
+      </div>
+      <br>
+      <div>
+        <%= button_tag(value: 'street', type: 'submit', class: 'btn btn-default', data: { toggle: "tooltip", placement: 'right'}, title: "Random Country Word") do %>
+          <i class="fa fa-road fa-3x"> STREETSMART</i>
+        <% end %>
+      </div>
+
     <% end %>
   </div>
 

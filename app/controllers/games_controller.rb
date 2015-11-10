@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(style: params[:commit])
+    @game = Game.new(style: params[:button])
     player = Player.where(name: (params[:player]))
     @player = player[0]
 

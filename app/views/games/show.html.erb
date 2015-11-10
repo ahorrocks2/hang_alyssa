@@ -1,16 +1,6 @@
 <%= render 'gallows', player: @player %>
 <%= render 'round', game: @game %>
-
-<% if @game.dead? == false && @game.won? %>
-  <hr>
-    <h1 style="text-align: center;">YOU WON!</h1>
-  <hr>
-<% end %>
-
-<hr>
-
 <%= render 'alphabet', player: @player %>
-
 <hr>
 
 <h1 id="dead"></h1>
