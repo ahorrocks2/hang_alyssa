@@ -13,9 +13,17 @@ class GuessesController < ApplicationController
     else
       @guess.save
       @guess.check_guess
-      respond_to do |format|
-        format.html { redirect_to game_path(@game) }
-        format.js
+
+      if @game.won?
+        respond_to do |format|
+          format.html { redirect_to game_path(@game) }
+          format.js { render :won }
+        end
+      else
+        respond_to do |format|
+          format.html { redirect_to game_path(@game) }
+          format.js
+        end
       end
     end
   end

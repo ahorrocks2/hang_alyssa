@@ -97,7 +97,7 @@ private
     else
     #if the user chooses 'book smart' it generates a dictionary word
       answer_text = RandomWordGenerator.word
-      Answer.create(text: answer_text)
+      Answer.create(text: 'dog')
       self.answer = Answer.last.text
     end
   end
