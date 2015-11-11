@@ -2,12 +2,12 @@
   <% if @game.dead? == false %>
     <% @game.display_answer.each do |piece| %>
       <% if piece == "[_]" %>
-        <img class='tile' src='http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=75736351'>
+        <i class="fa fa-lock fa-1x"></i>
       <% else %>
         <%= piece %>
       <% end %>
     <% end %>
   <% else %>
-    <h3> Answer: <%= @game.answer %> </h3>
+    <h3> You couldn't figure out: "<%= @game.answer %>" </h3>
   <% end %>
 </h1>

@@ -89,7 +89,7 @@ class Game < ActiveRecord::Base
 private
   def generate_answer
     #if the user chooses 'street smart' it generates a country name
-    if self.style == 'STREETSMART'
+    if self.style == 'street'
       answer_text = Faker::Address.country
       Answer.create(text: answer_text)
       self.answer = Answer.last.text

@@ -1,5 +1,4 @@
 $("#alphabet").hide();
 $("#letter_display").html('<%= j render "games/round", game: @game, player: @player %>');
-$("#dead").append('<h1 style="text-align: center;"><%= link_to "Play Again", root_path, class: "btn btn-sm btn-danger form-control" %>');
+$("#letter_display").append('<h1 style="text-align: center;"><%= link_to "Play Again", root_path, class: "btn btn-sm btn-danger form-control" %>');
 $("#gallows_header").append('<%= @player.dead %>')
-$("#gallows_image").hide();

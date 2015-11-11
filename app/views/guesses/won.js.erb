@@ -1,3 +1,4 @@
 $("#alphabet").hide();
 $("#letter_display").html('<%= j render "games/round", game: @game, player: @player %>');
-$("#dead").append('<h1 style="text-align: center;">YOU DID IT!</h1><br><%= link_to "Play Again", root_path, class: "btn btn-sm btn-danger form-control" %>');
+$("#letter_display").append('<h1 style="text-align: center;">YOU DID IT!</h1><br><%= link_to "Play Again", root_path, class: "btn btn-sm btn-danger form-control" %>');
+$("#gallows").append('<h1>Thanks for not letting me hang!</h1>');

@@ -1,6 +1,6 @@
 <div id="alphabet">
   <% ('A'..'Z').to_a.each do |letter| %>
-    <% if letter == 'Q' %>
+    <% if letter == 'i' || letter == 'r' %>
       <br><br>
       <%= link_to "#{letter}", game_guesses_path(@game.id, :letter => letter, :player => @player), :method => 'post', class: 'btn btn-lg btn-warning', id: "letter_#{letter}", remote: true %>
     <% else %>
