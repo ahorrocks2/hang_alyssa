@@ -1,6 +1,5 @@
 class Game < ActiveRecord::Base
   attr_accessor :style
-  require 'random_word_generator'
 
   has_many :guesses
   before_save :generate_answer
@@ -95,8 +94,8 @@ private
       self.answer = Answer.last.text
 
     else
-    #if the user chooses 'book smart' it generates a dictionary word
-      answer_text = RandomWordGenerator.word
+    #if the user chooses 'book smart' it generates a book genre
+      answer_text = Faker::Hacker.noun
       Answer.create(text: answer_text)
       self.answer = Answer.last.text
     end

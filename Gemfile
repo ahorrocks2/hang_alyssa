@@ -16,7 +16,6 @@ gem 'will_paginate'
 gem 'rest-client'
 gem 'faker'
 gem 'jquery-turbolinks'
-gem 'random-word-generator', '~> 0.0.1'
 gem "font-awesome-sass"
 
 group :development do
@@ -40,5 +39,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'simplecov', require: false
   gem 'poltergeist'
+end
 
+group :production do
+  gem 'rails_12factor'
 end
