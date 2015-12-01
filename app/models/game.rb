@@ -2,7 +2,7 @@ class Game < ActiveRecord::Base
   attr_accessor :style
 
   has_many :guesses
-  before_save :generate_answer
+  before_create :generate_answer
 
   def split_answer_to_letters
     letters_array = []
@@ -31,9 +31,9 @@ class Game < ActiveRecord::Base
       end
     end
 
-    if wrong_answers < 6
+    if wrong_answers < 5
       return false
-    elsif wrong_answers > 5 && (self.guesses.last.in_answer? == false)
+    elsif wrong_answers > 4 && (self.guesses.last.in_answer? == false)
       return true
     end
   end

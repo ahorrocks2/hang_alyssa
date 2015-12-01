@@ -9,4 +9,11 @@ class Guess < ActiveRecord::Base
       end
     end
   end
+
+  def update_hearts(game)
+    if self.in_answer? == false
+      game.hearts -= 1
+      game.save
+    end
+  end
 end

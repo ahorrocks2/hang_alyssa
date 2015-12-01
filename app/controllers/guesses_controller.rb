@@ -13,6 +13,7 @@ class GuessesController < ApplicationController
     else
       @guess.save
       @guess.check_guess
+      @guess.update_hearts(@game)
 
       if @game.won?
         respond_to do |format|

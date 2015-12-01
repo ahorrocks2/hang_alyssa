@@ -1,2 +1,3 @@
 $("#letter_<%= @guess.letter %>").hide();
 $("#letter_display").html('<%= j render "games/round", game: @game %>');
+$("#life_force").html('<%= j render "games/lives", game: @game %>');

@@ -2,6 +2,8 @@
   <div class="col-md-6">
     <img src="<%= @player.url %>" id="gallows_image">
     <h1 id=gallows_header></h1>
+
+    <%= render 'lives', game: @game %>
   </div>
 
   <div class="col-md-6">
