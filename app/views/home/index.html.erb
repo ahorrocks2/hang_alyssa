@@ -19,14 +19,11 @@
       <hr>
 
       <h3>I'm feeling...</h3>
-
-      <div>
+      <div id="play_buttons">
         <%= button_tag(type: 'submit', class: 'btn btn-default', data: { toggle: "tooltip", placement: 'left'}, title: "Guess a random book genre") do %>
           <i class="fa fa-book fa-3x"> BOOKSMART</i>
         <% end %>
-      </div>
-      <br>
-      <div>
+
         <%= button_tag(value: 'street', type: 'submit', class: 'btn btn-default', data: { toggle: "tooltip", placement: 'right'}, title: "Guess a random country name") do %>
           <i class="fa fa-road fa-3x"> STREETSMART</i>
         <% end %>

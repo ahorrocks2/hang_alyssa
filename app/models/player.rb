@@ -6,7 +6,7 @@ class Player < ActiveRecord::Base
     elsif self.name == 'Harry Potter'
       return 'Millions of childhoods are ruined.'
     elsif self.name == 'Diana Nyad'
-      return 'Congratulations! You actually won because powerful women are invincible.'
+      return 'Congratulations! You actually WON because powerful women are invincible.'
     elsif self.name == 'Kanye West'
       return 'Last words: I regret jilting Taylor Swift.'
     elsif self.name == 'Beyonce'

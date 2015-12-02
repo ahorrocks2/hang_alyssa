@@ -28,6 +28,12 @@ body {
   text-align: center;
 }
 
+#alphabet {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
 #homescreen {
   text-align: center;
   width: 100%;
@@ -38,25 +44,34 @@ body {
   h1 {
     font-family: 'Ribeye Marrow', cursive;
     font-size: 4em;
+    color: #50514F;
   }
   h3, p {
-    font-family: 'PT Mono', ;
+    font-family: 'PT Mono';
   }
+
+  p {
+    color: #247BA0;
+  }
+
   .player_options {
     display: inline-block;
   }
+
   .player_image {
     border-radius: 50px;
     height: 100px;
     width: 100px;
     margin: 5px;
+    -webkit-filter: grayscale(1);
   }
-  .players {
-    display: inline-block;
-    margin: 10px;
-  }
+
   .btn {
-    width: 450px;
+    width: 425px;
+  }
+
+  .btn:hover {
+    background-color: #B9E3C6;
   }
 
   input {
@@ -66,21 +81,30 @@ body {
 
   label:hover {
     cursor: pointer;
-    border: 2px dashed black;
+    border: 2px dashed #247BA0;
     border-radius: 100px;
   }
 
   input[type=radio]:checked + img {
-    border: 5px solid #6B5E62;
+    border: 5px solid #B9E3C6;
+    -webkit-filter: grayscale(0);
     margin: 5px;
     border-radius: 100px;
+  }
+
+  #play_buttons {
+    display: inline;
   }
 
   btn-path {
     font-family: 'PT Mono';
     border-radius: 30px;
-    color: pink;
   }
+}
+
+#letter_display > #show_answer {
+  margin-top: 9em;
+  font-family: 'PT Mono';
 }
 
 #gallows {
@@ -97,14 +121,16 @@ body {
   align: center;
 }
 
-#gallows_header {
-  text-align: center;
-  font-family: 'PT Mono', ;
-}
-
 #life_force {
   text-align: center;
 }
+
+#gallows_header {
+  text-align: center;
+  font-family: 'PT Mono', ;
+  font-size: 3em;
+}
+
 
 .dead {
   opacity: 0.4;
@@ -115,5 +141,7 @@ body {
 }
 
 .not_dead {
-  opacity: 0.4;
+  padding: 10px;
+  border: dotted yellow;
+  border-width: 6px;
 }

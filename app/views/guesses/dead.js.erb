@@ -1,10 +1,19 @@
 $("#alphabet").hide();
+
 $("#letter_display").html('<%= j render "games/round", game: @game, player: @player %>');
-$("#letter_display").append('<h1 style="text-align: center;"><%= link_to "Play Again", root_path, class: "btn btn-sm btn-danger form-control" %>');
+$("#letter_display").append('<h1 style="text-align: center">')
+
+$("#footer").append('<%= link_to "PLAY AGAIN", root_path, class: "btn btn-sm btn-success form-control" %>');
+
+
+
+
 $("#gallows_header").append('<%= @player.dead %>')
 $("#life_force").hide();
+
 if ($("#gallows_image").attr("value") == "Diana Nyad") {
   $("#gallows_image").addClass('not_dead')
 } else {
   $("#gallows_image").addClass('dead');
+  $("#gallows_header").addClass('headstone');
 }

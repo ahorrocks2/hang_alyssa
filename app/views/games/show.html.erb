@@ -1,14 +1,21 @@
 <div class="row" id="gallows">
-  <div class="col-md-6">
+  <div class="col-md-6" id="left_column">
     <img src="<%= @player.url %>" id="gallows_image" value="<%= @player.name %>">
-    <h1 id=gallows_header></h1>
 
     <%= render 'lives', game: @game %>
+
+    <div id=gallows_header></div>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-6" id="right_column">
     <%= render 'round', game: @game %>
     <%= render 'alphabet', player: @player %>
     <hr>
   </div>
+</div>
+
+<br>
+
+<div class="row" id="footer">
+
 </div>
