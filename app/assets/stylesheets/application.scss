@@ -58,6 +58,23 @@ body {
   .btn {
     width: 450px;
   }
+
+  input {
+    visibility: hidden;
+    position: absolute;
+  }
+
+  label:hover {
+    cursor: pointer;
+    border: 2px dashed black;
+    border-radius: 100px;
+  }
+
+  input[type=radio]:checked + img {
+    border: 5px solid #6B5E62;
+    margin: 5px;
+    border-radius: 100px;
+  }
 }
 
 #gallows {

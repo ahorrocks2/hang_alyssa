@@ -7,11 +7,12 @@
   <div class="players">
 
     <%= form_tag games_path do %>
-
       <% @players.each do |p| %>
         <div class="player_options">
-          <img src="<%= p.url %>" class="player_image"><br>
-          <%= radio_button_tag 'player', "#{p.name}" %>
+          <label>
+            <%= radio_button_tag 'player', "#{p.name}"%>
+            <img src="<%= p.url %>" class="player_image"><br>
+          </label>
         </div>
       <% end %>
 
