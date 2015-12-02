@@ -1,6 +1,6 @@
 <div class="row" id="gallows">
   <div class="col-md-6">
-    <img src="<%= @player.url %>" id="gallows_image">
+    <img src="<%= @player.url %>" id="gallows_image" value="<%= @player.name %>">
     <h1 id=gallows_header></h1>
 
     <%= render 'lives', game: @game %>
